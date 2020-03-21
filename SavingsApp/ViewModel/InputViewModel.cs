@@ -16,7 +16,7 @@ namespace SavingsApp.ViewModel
         public Payslip Payslip { get; private set; }
         public string ButtonText { get; private set; } = "新規登録";
 
-        public ReactiveCommand Button_Click { get; private set; } = new ReactiveCommand();
+        public ReactiveCommand SingUp { get; private set; } = new ReactiveCommand();
 
         public InputViewModel(Payslip payslip)
         {
@@ -25,6 +25,10 @@ namespace SavingsApp.ViewModel
             {
                 Year.Add(i);
             }
+            SingUp.Subscribe(() =>
+            {
+                //App.Database
+            });
 
         }
     }
