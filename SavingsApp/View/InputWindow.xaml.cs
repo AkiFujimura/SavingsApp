@@ -1,4 +1,5 @@
-﻿using SavingsApp.SQLite;
+﻿using MahApps.Metro.Controls;
+using SavingsApp.SQLite;
 using SavingsApp.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -20,15 +21,15 @@ namespace SavingsApp.View
     /// <summary>
     /// InputWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class InputWindow : Window
+    public partial class InputWindow : MetroWindow
     {
         public InputWindow(Payslip payslip)
         {
             InitializeComponent();
+
             this.DataContext = new InputViewModel(payslip);
-            this.Year.SelectedItem = DateTime.Now.Year;
-            this.Month.SelectedItem = DateTime.Now.Month;
-            this.Day.SelectedItem = 30;
+
+            
         }
 
 

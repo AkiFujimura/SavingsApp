@@ -18,7 +18,9 @@ namespace SavingsApp.ViewModel
         {
             Button_Click.Subscribe(() =>
             {
-                var payslip = new Payslip();
+                var payslip = new Payslip() {
+                    Date = DateTime.Now
+                };
                 var Window = new InputWindow(payslip);
                 Window.Show();
             });

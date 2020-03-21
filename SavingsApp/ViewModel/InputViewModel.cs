@@ -10,26 +10,26 @@ namespace SavingsApp.ViewModel
 {
     public class InputViewModel
     {
-        public List<int> Year { get; set; } = new List<int>();
-        public List<int> Month { get; set; } = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+        public int Year { get; set; } = 0;
+        public int Month { get; set; } = 0;
         public List<int> Day { get; set; } = new List<int> { 25, 26, 27, 28, 29, 30, 31 };
         public Payslip Payslip { get; private set; }
-        public string ButtonText { get; private set; } = "新規登録";
+        public ReactiveProperty<string> ButtonText { get; private set; } = new ReactiveProperty<string>() { Value = "新規登録" };
 
         public ReactiveCommand SingUp { get; private set; } = new ReactiveCommand();
 
         public InputViewModel(Payslip payslip)
         {
-            var toYear = DateTime.Now;
-            for (int i = 1990; i <= toYear.Year; i++)
-            {
-                Year.Add(i);
-            }
+            Year = payslip.Date.Year;
+            Month = payslip.Date.Month;
             SingUp.Subscribe(() =>
             {
-                //App.Database
+                
             });
-
+            if(payslip.Id != 0)
+            {
+                ButtonText.Value = "　更新　"; 
+            }
         }
     }
 }

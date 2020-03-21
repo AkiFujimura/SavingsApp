@@ -17,19 +17,19 @@ namespace SavingsApp.SQLite
             _database.CreateTableAsync<Payslip>().Wait();
         }
 
-        public Task<List<Payslip>> GetNotesAsync()
+        public Task<List<Payslip>> GetsAsync()
         {
             return _database.Table<Payslip>().ToListAsync();
         }
 
-        public Task<Payslip> GetNoteAsync(int id)
+        public Task<Payslip> GetAsync(int id)
         {
             return _database.Table<Payslip>()
                             .Where(i => i.Id == id)
                             .FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveNoteAsync(Payslip payslip)
+        public Task<int> SaveAsync(Payslip payslip)
         {
             if (payslip.Id != 0)
             {
@@ -41,7 +41,7 @@ namespace SavingsApp.SQLite
             }
         }
 
-        public Task<int> DeleteNoteAsync(Payslip payslip)
+        public Task<int> DeleteAsync(Payslip payslip)
         {
             return _database.DeleteAsync(payslip);
         }

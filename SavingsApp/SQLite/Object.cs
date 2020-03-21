@@ -44,6 +44,7 @@ namespace SavingsApp.SQLite
 
         public Payslip()
         {
+            Id = 0;
             Date = new DateTime();
             WorkDay = 0;
             Supply = 0;
