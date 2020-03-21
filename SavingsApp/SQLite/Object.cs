@@ -41,6 +41,16 @@ namespace SavingsApp.SQLite
         /// 総支給額
         /// </summary>
         public int Total { get; set; }
+
+        public Payslip()
+        {
+            Date = new DateTime();
+            WorkDay = 0;
+            Supply = 0;
+            Deduction = 0;
+            Other = 0;
+            Total = 0;
+        }
     }
 }
 

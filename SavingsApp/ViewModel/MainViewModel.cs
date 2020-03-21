@@ -1,4 +1,5 @@
 ﻿using Reactive.Bindings;
+using SavingsApp.SQLite;
 using SavingsApp.View;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ namespace SavingsApp.ViewModel
         {
             Button_Click.Subscribe(() =>
             {
-                var Window = new InputWindow();
+                var payslip = new Payslip();
+                var Window = new InputWindow(payslip);
                 Window.Show();
             });
         }

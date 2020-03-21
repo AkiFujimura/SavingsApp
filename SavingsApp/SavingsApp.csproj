@@ -93,6 +93,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -101,6 +102,7 @@
     </ApplicationDefinition>
     <Compile Include="SQLite\Object.cs" />
     <Compile Include="SQLite\SQLite.cs" />
+    <Compile Include="ViewModel\InputViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\InputWindow.xaml.cs">
       <DependentUpon>InputWindow.xaml</DependentUpon>

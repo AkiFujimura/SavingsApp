@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SavingsApp.SQLite;
+using SavingsApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,14 @@ namespace SavingsApp.View
     /// </summary>
     public partial class InputWindow : Window
     {
-        public InputWindow()
+        public InputWindow(Payslip payslip)
         {
             InitializeComponent();
+            this.DataContext = new InputViewModel(payslip);
+            this.Year.SelectedItem = DateTime.Now.Year;
+            this.Month.SelectedItem = DateTime.Now.Month;
+            this.Day.SelectedItem = 30;
         }
+
     }
 }

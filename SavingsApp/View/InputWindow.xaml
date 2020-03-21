@@ -4,14 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SavingsApp.View"
+        xmlns:wfm="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
+        FontSize="16"
         Title="InputWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="5,5,5,5" ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -22,16 +24,28 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="年月情報"/>
-        <TextBlock Grid.Column="0" Grid.Row="1" Text="出勤日数"/>
-        <TextBlock Grid.Column="0" Grid.Row="2" Text="支給"/>
-        <TextBlock Grid.Column="0" Grid.Row="3" Text="その他"/>
-        <TextBlock Grid.Column="0" Grid.Row="4" Text="総支給額"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Height="Auto" Width="Auto" Margin="5,0,5,0" VerticalAlignment="Center" Text="年月情報"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Height="Auto" Width="Auto" Margin="5,0,5,0" VerticalAlignment="Center" Text="出勤日数"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Height="Auto" Width="Auto" Margin="5,0,5,0" VerticalAlignment="Center" Text="控除"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Height="Auto" Width="Auto" Margin="5,0,5,0" VerticalAlignment="Center" Text="支給"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Height="Auto" Width="Auto" Margin="5,0,5,0" VerticalAlignment="Center" Text="その他"/>
+        <TextBlock Grid.Column="0" Grid.Row="5" Height="Auto" Width="Auto" Margin="5,0,5,0" VerticalAlignment="Center" Text="総支給額"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal"  Margin="5,0,5,0">
+            <ComboBox x:Name="Year" VerticalAlignment="Center" ItemsSource="{Binding Year}"/>
+            <TextBlock  VerticalAlignment="Center" Text="年"/>
+            <ComboBox x:Name="Month" VerticalAlignment="Center" ItemsSource="{Binding Month}"/>
+            <TextBlock  VerticalAlignment="Center" Text="月"/>
+        </StackPanel>
 
-        <TextBox Grid.Column="1" Grid.Row="0" Text="年月情報"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="出勤日数"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="支給"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Text="その他"/>
-        <TextBox Grid.Column="1" Grid.Row="4" Text="総支給額"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"  Margin="5,0,5,0">
+            <ComboBox x:Name="Day" VerticalAlignment="Center" ItemsSource="{Binding Day}"/>
+            <TextBlock  VerticalAlignment="Center" Text="月"/>
+        </StackPanel>
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Payslip.Supply}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap" InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Payslip.Deduction}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap" InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Payslip.Other}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap" InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Payslip.Total}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap" InputMethod.IsInputMethodEnabled="False"/>
+
+        <Button Grid.Column="1" Grid.Row="6" Height="40" Width="150" Content="{Binding ButtonText}"/>
     </Grid>
 </Window>
