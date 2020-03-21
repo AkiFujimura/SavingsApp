@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Width="Auto" Margin="5,5,5,5">
+            <TextBlock Text="{Binding ToMonth}" Padding="5,5,5,5" />
+            <Button Height="Auto" Width="150" FontSize="16" Content="月データ入力画面へ" HorizontalAlignment="Left" Padding="5,5,5,5" />
+
+        </StackPanel>
+
+
     </Grid>
 </Window>

@@ -22,6 +22,7 @@ namespace SavingsApp
         public Window1()
         {
             InitializeComponent();
+            this.DataContext = new ViewModel.MainViewModel();
         }
     }
 }
