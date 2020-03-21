@@ -1,0 +1,15 @@
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\bin\Debug\SavingsApp.exe.config
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\bin\Debug\SavingsApp.exe
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\bin\Debug\SavingsApp.pdb
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp.csprojAssemblyReference.cache
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\View\MainWindow.g.cs
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\App.g.cs
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp_MarkupCompile.cache
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp_MarkupCompile.lref
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\View\MainWindow.baml
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp.g.resources
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp.Properties.Resources.resources
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp.csproj.GenerateResource.cache
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp.csproj.CoreCompileInputs.cache
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp.exe
+C:\Users\a_fujimura\Desktop\SavingsApp\SavingsApp\obj\Debug\SavingsApp.pdb
