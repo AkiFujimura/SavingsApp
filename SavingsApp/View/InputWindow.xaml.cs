@@ -12,19 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SavingsApp
+namespace SavingsApp.View
 {
     /// <summary>
-    /// Window1.xaml の相互作用ロジック
+    /// InputWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class InputWindow : Window
     {
-        public MainWindow()
+        public InputWindow()
         {
             InitializeComponent();
-            this.DataContext = new ViewModel.MainViewModel();
         }
-
-
     }
 }
