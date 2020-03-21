@@ -7,7 +7,7 @@
                       xmlns:wfm="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
                       mc:Ignorable="d"
                       FontSize="16"
-                      Title="InputWindow" Height="450" Width="800">
+                      Title="InputWindow" Height="450" Width="800" TitleCaps="False">
     <Grid Margin="5,5,5,5" ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>

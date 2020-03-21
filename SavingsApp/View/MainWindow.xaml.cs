@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using SavingsApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +19,25 @@ namespace SavingsApp
     /// <summary>
     /// Window1.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new ViewModel.MainViewModel();
+            this.DataContext = new MainViewModel();
+            Year.SelectedItem = DateTime.Now.Year;
+            Month.SelectedItem = DateTime.Now.Month;
+        }
+        private void Year_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var i = DataContext as MainViewModel;
+            i.SelectedYear = (int)Year.SelectedItem;
         }
 
-
+        private void Month_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var i = DataContext as MainViewModel;
+            i.SelectedMonth = (int)Month.SelectedItem;
+        }
     }
 }
