@@ -26,9 +26,11 @@ namespace SavingsApp.ViewModel
 
             Button_Click.Subscribe(() =>
             {
+                var i = App.Database.GetAsync(new DateTime(SelectedYear, SelectedMonth, 1)).Result;
+
                 var payslip = new Payslip()
                 {
-                    Date =  new DateTime(SelectedYear,SelectedMonth,1)
+                    Date = new DateTime(SelectedYear, SelectedMonth, 1)
                 };
                 var Window = new InputWindow(payslip);
                 Window.Show();

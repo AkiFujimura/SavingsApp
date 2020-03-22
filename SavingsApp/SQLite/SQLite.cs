@@ -29,6 +29,13 @@ namespace SavingsApp.SQLite
                             .FirstOrDefaultAsync();
         }
 
+        public Task<Payslip> GetAsync(DateTime date)
+        {
+            return _database.Table<Payslip>()
+                            .Where(i => i.Date == date)
+                            .FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveAsync(Payslip payslip)
         {
             if (payslip.Id != 0)
@@ -45,6 +52,7 @@ namespace SavingsApp.SQLite
         {
             return _database.DeleteAsync(payslip);
         }
+
 
     }
 }

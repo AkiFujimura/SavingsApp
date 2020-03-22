@@ -38,18 +38,29 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"  Margin="5,0,5,0">
-            <ComboBox x:Name="Day" VerticalAlignment="Center" ItemsSource="{Binding Day}"/>
+            <ComboBox x:Name="Day" VerticalAlignment="Center" ItemsSource="{Binding Day}" SelectionChanged="Day_SelectionChanged"/>
             <TextBlock  VerticalAlignment="Center" Text="日"/>
         </StackPanel>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Payslip.Supply}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap" 
-                 PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Payslip.Deduction}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap"
-                 PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
-        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Payslip.Other}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap"
-                 PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
-        <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Payslip.Total}" VerticalAlignment="Center" Margin="5,0,5,0" TextWrapping="Wrap"
-                 PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
-
+        <StackPanel Grid.Column="1" Grid.Row="2" Margin="5,0,5,0" Orientation="Horizontal"  VerticalAlignment="Center">
+            <TextBox Text="{Binding Payslip.Supply}" Width="150"
+                 TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False" HorizontalAlignment="Left"/>
+            <TextBlock Text="円"/>
+        </StackPanel>
+        <StackPanel  Grid.Column="1" Grid.Row="3"  Margin="5,0,5,0" Orientation="Horizontal" VerticalAlignment="Center" >
+            <TextBox Text="{Binding Payslip.Deduction}" Width="150"
+                 TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False" HorizontalAlignment="Left"/>
+            <TextBlock Text="円"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="4"  Margin="5,0,5,0" Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBox Text="{Binding Payslip.Other}" Width="150" 
+                 TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False" HorizontalAlignment="Left"/>
+            <TextBlock Text="円"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Orientation="Horizontal"  Margin="5,0,5,0" >
+            <TextBox  Text="{Binding Payslip.Total}" Width="150"
+                      TextWrapping="Wrap" PreviewTextInput="TextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False" HorizontalAlignment="Left"/>
+            <TextBlock Text="円"/>
+        </StackPanel>
         <Button Grid.Column="1" Grid.Row="6" Height="40" Width="150" Content="{Binding ButtonText.Value}" FontSize="16" Command="{Binding SingUp}"
                 HorizontalAlignment="Left" Margin="5,0,5,0"/>
     </Grid>

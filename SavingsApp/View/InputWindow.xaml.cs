@@ -26,8 +26,8 @@ namespace SavingsApp.View
         public InputWindow(Payslip payslip)
         {
             InitializeComponent();
-
-            this.DataContext = new InputViewModel(payslip);
+            Action action = (() => { Close(); });
+            this.DataContext = new InputViewModel(payslip, action);
 
             
         }
@@ -38,5 +38,10 @@ namespace SavingsApp.View
             e.Handled = !new Regex("[0-9]").IsMatch(e.Text);
         }
 
+        private void Day_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var i = this.DataContext as InputViewModel;
+            i.SelectedDay = (int)this.Day.SelectedItem;
+        }
     }
 }

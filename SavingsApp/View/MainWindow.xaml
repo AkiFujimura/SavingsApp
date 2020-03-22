@@ -7,13 +7,22 @@
                       mc:Ignorable="d" FontSize="16"
                       Title="メイン画面" Height="450" Width="800" TitleCaps="False">
     <Grid>
-        <StackPanel Width="Auto" VerticalAlignment="Top" Margin="5,5,5,5" Orientation="Horizontal">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="1" Grid.Row="0"  Height="Auto" Width="Auto" FontSize="16" Content="登録更新" HorizontalAlignment="Right" Margin="5,5,5,5" Padding="10,5,10,5" Command="{Binding Button_Click}"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Width="Auto" VerticalAlignment="Center" Margin="5,5,5,5" Orientation="Horizontal" HorizontalAlignment="Right">
             <ComboBox x:Name="Year" ItemsSource="{Binding Year}" SelectionChanged="Year_SelectionChanged"/>
             <TextBlock Text="年" TextAlignment="Center" VerticalAlignment="Center"/>
             <ComboBox x:Name="Month" ItemsSource="{Binding Month}" SelectionChanged="Month_SelectionChanged"/>
             <TextBlock Text="月" TextAlignment="Center" VerticalAlignment="Center"/>
-            
-            <Button Height="Auto" Width="150" FontSize="16" Content="登録更新" HorizontalAlignment="Right" Padding="5,5,5,5" Command="{Binding Button_Click}"/>
+
 
         </StackPanel>
 
